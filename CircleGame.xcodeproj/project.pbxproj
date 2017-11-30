@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29C9DC101FCD97D200556DED /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9DC0F1FCD97D200556DED /* Background.swift */; };
+		29C9DC121FCD97E300556DED /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9DC111FCD97E300556DED /* Ground.swift */; };
+		29C9DC141FCDCE1700556DED /* CircleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9DC131FCDCE1700556DED /* CircleService.swift */; };
+		29C9DC161FCDD4D100556DED /* ObstacleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9DC151FCDD4D100556DED /* ObstacleService.swift */; };
+		29D8D9591FCC624A0003198D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9581FCC624A0003198D /* AppDelegate.swift */; };
+		29D8D95D1FCC624A0003198D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D8D95C1FCC624A0003198D /* Actions.sks */; };
+		29D8D9611FCC624A0003198D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9601FCC624A0003198D /* GameViewController.swift */; };
+		29D8D9641FCC624A0003198D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D8D9621FCC624A0003198D /* Main.storyboard */; };
+		29D8D9661FCC624A0003198D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D8D9651FCC624A0003198D /* Assets.xcassets */; };
+		29D8D9691FCC624A0003198D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29D8D9671FCC624A0003198D /* LaunchScreen.storyboard */; };
+		29D8D9771FCC62FE0003198D /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9761FCC62FE0003198D /* MainMenuScene.swift */; };
+		29D8D9791FCC630D0003198D /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9781FCC630D0003198D /* GameplayScene.swift */; };
+		29D8D97B1FCC631F0003198D /* MainMenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D8D97A1FCC631F0003198D /* MainMenuScene.sks */; };
+		29D8D97D1FCC63290003198D /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29D8D97C1FCC63290003198D /* GameplayScene.sks */; };
+		29D8D97F1FCC63B50003198D /* IphoneTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D97E1FCC63B50003198D /* IphoneTypeService.swift */; };
+		29D8D9831FCC686F0003198D /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9821FCC686F0003198D /* Circle.swift */; };
+		29D8D9851FCCAA8F0003198D /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9841FCCAA8F0003198D /* Obstacle.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		29C9DC0F1FCD97D200556DED /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		29C9DC111FCD97E300556DED /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		29C9DC131FCDCE1700556DED /* CircleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleService.swift; sourceTree = "<group>"; };
+		29C9DC151FCDD4D100556DED /* ObstacleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleService.swift; sourceTree = "<group>"; };
+		29D8D9551FCC624A0003198D /* CircleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29D8D9581FCC624A0003198D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29D8D95C1FCC624A0003198D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		29D8D9601FCC624A0003198D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		29D8D9631FCC624A0003198D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29D8D9651FCC624A0003198D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29D8D9681FCC624A0003198D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29D8D96A1FCC624A0003198D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29D8D9761FCC62FE0003198D /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		29D8D9781FCC630D0003198D /* GameplayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
+		29D8D97A1FCC631F0003198D /* MainMenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenuScene.sks; sourceTree = "<group>"; };
+		29D8D97C1FCC63290003198D /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
+		29D8D97E1FCC63B50003198D /* IphoneTypeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneTypeService.swift; sourceTree = "<group>"; };
+		29D8D9821FCC686F0003198D /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		29D8D9841FCCAA8F0003198D /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29D8D9521FCC624A0003198D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29D8D94C1FCC624A0003198D = {
+			isa = PBXGroup;
+			children = (
+				29D8D9571FCC624A0003198D /* CircleGame */,
+				29D8D9561FCC624A0003198D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29D8D9561FCC624A0003198D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D9551FCC624A0003198D /* CircleGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29D8D9571FCC624A0003198D /* CircleGame */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D96A1FCC624A0003198D /* Info.plist */,
+				29D8D9751FCC62760003198D /* Model */,
+				29D8D9731FCC62680003198D /* View */,
+				29D8D9711FCC625C0003198D /* Controller */,
+				29D8D9701FCC62570003198D /* Service */,
+			);
+			path = CircleGame;
+			sourceTree = "<group>";
+		};
+		29D8D9701FCC62570003198D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D97E1FCC63B50003198D /* IphoneTypeService.swift */,
+				29C9DC131FCDCE1700556DED /* CircleService.swift */,
+				29C9DC151FCDD4D100556DED /* ObstacleService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		29D8D9711FCC625C0003198D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D9721FCC62620003198D /* SceneController */,
+				29D8D9581FCC624A0003198D /* AppDelegate.swift */,
+				29D8D9601FCC624A0003198D /* GameViewController.swift */,
+			);
+			name = Controller;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		29D8D9721FCC62620003198D /* SceneController */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D9761FCC62FE0003198D /* MainMenuScene.swift */,
+				29D8D9781FCC630D0003198D /* GameplayScene.swift */,
+			);
+			path = SceneController;
+			sourceTree = "<group>";
+		};
+		29D8D9731FCC62680003198D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D9741FCC626E0003198D /* SceneView */,
+				29D8D9651FCC624A0003198D /* Assets.xcassets */,
+				29D8D9621FCC624A0003198D /* Main.storyboard */,
+				29D8D9671FCC624A0003198D /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			path = "New Group1";
+			sourceTree = "<group>";
+		};
+		29D8D9741FCC626E0003198D /* SceneView */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D95C1FCC624A0003198D /* Actions.sks */,
+				29D8D97A1FCC631F0003198D /* MainMenuScene.sks */,
+				29D8D97C1FCC63290003198D /* GameplayScene.sks */,
+			);
+			name = SceneView;
+			path = SceneVire;
+			sourceTree = "<group>";
+		};
+		29D8D9751FCC62760003198D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29D8D9821FCC686F0003198D /* Circle.swift */,
+				29D8D9841FCCAA8F0003198D /* Obstacle.swift */,
+				29C9DC0F1FCD97D200556DED /* Background.swift */,
+				29C9DC111FCD97E300556DED /* Ground.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29D8D9541FCC624A0003198D /* CircleGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29D8D96D1FCC624A0003198D /* Build configuration list for PBXNativeTarget "CircleGame" */;
+			buildPhases = (
+				29D8D9511FCC624A0003198D /* Sources */,
+				29D8D9521FCC624A0003198D /* Frameworks */,
+				29D8D9531FCC624A0003198D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CircleGame;
+			productName = CircleGame;
+			productReference = 29D8D9551FCC624A0003198D /* CircleGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29D8D94D1FCC624A0003198D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Rus Razvan";
+				TargetAttributes = {
+					29D8D9541FCC624A0003198D = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 29D8D9501FCC624A0003198D /* Build configuration list for PBXProject "CircleGame" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29D8D94C1FCC624A0003198D;
+			productRefGroup = 29D8D9561FCC624A0003198D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29D8D9541FCC624A0003198D /* CircleGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29D8D9531FCC624A0003198D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29D8D9641FCC624A0003198D /* Main.storyboard in Resources */,
+				29D8D9661FCC624A0003198D /* Assets.xcassets in Resources */,
+				29D8D9691FCC624A0003198D /* LaunchScreen.storyboard in Resources */,
+				29D8D97D1FCC63290003198D /* GameplayScene.sks in Resources */,
+				29D8D97B1FCC631F0003198D /* MainMenuScene.sks in Resources */,
+				29D8D95D1FCC624A0003198D /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29D8D9511FCC624A0003198D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29D8D9851FCCAA8F0003198D /* Obstacle.swift in Sources */,
+				29D8D9791FCC630D0003198D /* GameplayScene.swift in Sources */,
+				29D8D9611FCC624A0003198D /* GameViewController.swift in Sources */,
+				29C9DC101FCD97D200556DED /* Background.swift in Sources */,
+				29D8D9771FCC62FE0003198D /* MainMenuScene.swift in Sources */,
+				29D8D9591FCC624A0003198D /* AppDelegate.swift in Sources */,
+				29C9DC121FCD97E300556DED /* Ground.swift in Sources */,
+				29C9DC161FCDD4D100556DED /* ObstacleService.swift in Sources */,
+				29C9DC141FCDCE1700556DED /* CircleService.swift in Sources */,
+				29D8D97F1FCC63B50003198D /* IphoneTypeService.swift in Sources */,
+				29D8D9831FCC686F0003198D /* Circle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		29D8D9621FCC624A0003198D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D8D9631FCC624A0003198D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29D8D9671FCC624A0003198D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29D8D9681FCC624A0003198D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29D8D96B1FCC624A0003198D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		29D8D96C1FCC624A0003198D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29D8D96E1FCC624A0003198D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9NG53WPHY;
+				INFOPLIST_FILE = CircleGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RusRazvan.CircleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29D8D96F1FCC624A0003198D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L9NG53WPHY;
+				INFOPLIST_FILE = CircleGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = RusRazvan.CircleGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29D8D9501FCC624A0003198D /* Build configuration list for PBXProject "CircleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D8D96B1FCC624A0003198D /* Debug */,
+				29D8D96C1FCC624A0003198D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29D8D96D1FCC624A0003198D /* Build configuration list for PBXNativeTarget "CircleGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D8D96E1FCC624A0003198D /* Debug */,
+				29D8D96F1FCC624A0003198D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29D8D94D1FCC624A0003198D /* Project object */;
+}
