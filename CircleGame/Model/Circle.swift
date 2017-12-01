@@ -16,6 +16,8 @@ struct ColliderType {
 }
 
 class Circle: SKSpriteNode {
+    var circleDelegate: CircleDelegate!
+    
     func initialize() {
         createCircle()
     }
@@ -58,16 +60,25 @@ class Circle: SKSpriteNode {
     func animateCircle(to xPosition: CGFloat) {
         let rotateAction = SKAction.rotate(byAngle: CircleService.shared.animationAngleRotation, duration: CircleService.shared.moveAnimationDuration)
         let moveAction = SKAction.moveTo(x: xPosition, duration: CircleService.shared.moveAnimationDuration)
+        let delegateCall = SKAction.run { self.circleDelegate.circleFinishedMoving() }
         let group = SKAction.group([rotateAction,moveAction])
-        self.run(group)
+        let sequence = SKAction.sequence([group,delegateCall])
+        self.run(sequence)
     }
     
     func animateCircleBack(to xPosition: CGFloat) {
         let moveAction = SKAction.moveTo(x: xPosition, duration: CircleService.shared.moveBackAnimationDuration)
         let resizeAction = SKAction.scale(to: CircleService.shared.initialScale, duration: CircleService.shared.moveBackAnimationDuration)
+        let delegateCall = SKAction.run { self.circleDelegate.circleFinishedMovingBack() }
         let group = SKAction.group([moveAction,resizeAction])
-        self.run(group)
+        let sequence = SKAction.sequence([group,delegateCall])
+        self.run(sequence)
     }
+}
+
+protocol CircleDelegate {
+    func circleFinishedMoving()
+    func circleFinishedMovingBack()
 }
 
 

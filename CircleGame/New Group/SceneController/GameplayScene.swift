@@ -14,7 +14,7 @@ class GameplayScene: SKScene {
     var scoreLabel: SKLabelNode?
     
     var circleCanScale = true
-    var backgroundCanMove = false
+    var circleIsMoving = false
     
     override func didMove(to view: SKView) {
         initialize()
@@ -38,7 +38,7 @@ class GameplayScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if backgroundCanMove {
+        if circleIsMoving {
             moveBackground()
         }
     }
@@ -46,7 +46,7 @@ class GameplayScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if circleCanScale {
             circle.scale()
-        }else if backgroundCanMove {
+        }else if circleIsMoving {
             circle.scale()
         }
     }
@@ -59,7 +59,7 @@ class GameplayScene: SKScene {
             } else {
                 circleScaleFailed()
             }
-        }else if backgroundCanMove {
+        }else if circleIsMoving {
             circle.stopScale()
         }
     }
@@ -70,8 +70,8 @@ class GameplayScene: SKScene {
     
     func circleScaleFailed() {
         circle.stopScale()
-        circleCanScale = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + CircleService.shared.scaleFailedDuration, execute: { self.circleCanScale = true })
+//        circleCanScale = false
+//        DispatchQueue.main.asyncAfter(deadline: .now() + CircleService.shared.scaleFailedDuration, execute: { self.circleCanScale = true })
         circle.scaleBack()
     }
     
@@ -99,6 +99,7 @@ extension GameplayScene {
     func createCircle() {
         circle.initialize()
         circle.setPosition(CGPoint(x: CircleService.shared.startingPoint, y: 0))
+        circle.circleDelegate = self
         self.addChild(circle)
     }
     
@@ -152,27 +153,10 @@ extension GameplayScene {
     func moveCircle() {
         circle.stopScale()
         circle.animateCircle(to: CircleService.shared.endingPoint)
-        Timer.scheduledTimer(timeInterval: CircleService.shared.moveAnimationDuration, target: self, selector: #selector(circleFinishedMoving), userInfo: nil, repeats: false)
         
         circleCanScale = false
-        backgroundCanMove = true
+        circleIsMoving = true
     }
-    
-    @objc
-    func circleFinishedMoving() {
-        backgroundCanMove = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + CircleService.shared.moveBackAnimationDuration, execute: { self.circleCanScale = true })
-        
-        increaseScore()
-        adjustObstacleDistance()
-        createNextObstacle()
-        
-        circle.stopScale()
-        circle.animateCircleBack(to: CircleService.shared.startingPoint)
-        moveObstacles()
-        moveGround()
-    }
-    
     
     func moveBackground() {
         enumerateChildNodes(withName: "Background", using: ({
@@ -222,12 +206,34 @@ extension GameplayScene: SKPhysicsContactDelegate {
         }
 
         if firstBody.node?.name == "Circle" && secoundBody.node?.name == "ObstaclePartUp" {
-            presentMainMenu()
+            self.removeAllChildren()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { self.presentMainMenu() })
         }
     }
 }
 
 
+// MARK: Circle delegate extension
+extension GameplayScene: CircleDelegate {
+    func circleFinishedMoving() {
+        circleIsMoving = false
+        
+        increaseScore()
+        adjustObstacleDistance()
+        createNextObstacle()
+        
+        circle.stopScale()
+        circle.animateCircleBack(to: CircleService.shared.startingPoint)
+        moveObstacles()
+        moveGround()
+    }
+    
+    func circleFinishedMovingBack() {
+        circleCanScale = true
+    }
+    
+
+}
 
 
 
