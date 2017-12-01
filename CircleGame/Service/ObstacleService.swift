@@ -21,7 +21,7 @@ class ObstacleService {
     
     let outOfScreenPosition: CGFloat = -750
     
-    func resetDistance() {
+    func resetDistanceBetween() {
         self.distanceBetween = 400
     }
 }

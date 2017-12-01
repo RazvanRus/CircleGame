@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+// MARK: Colider types struct
 struct ColliderType {
     static let Circle: UInt32 = 1
     static let Obstacle: UInt32 = 2
@@ -15,6 +16,15 @@ struct ColliderType {
     static let Score: UInt32 = 4
 }
 
+
+// MARK: protocol for circle delegate
+protocol CircleDelegate {
+    func circleFinishedMoving()
+    func circleFinishedMovingBack()
+}
+
+
+// MARK: Circle class
 class Circle: SKSpriteNode {
     var circleDelegate: CircleDelegate!
     
@@ -57,7 +67,7 @@ class Circle: SKSpriteNode {
         self.removeAction(forKey: "scaleAction")
     }
     
-    func animateCircle(to xPosition: CGFloat) {
+    func animate(to xPosition: CGFloat) {
         let rotateAction = SKAction.rotate(byAngle: CircleService.shared.animationAngleRotation, duration: CircleService.shared.moveAnimationDuration)
         let moveAction = SKAction.moveTo(x: xPosition, duration: CircleService.shared.moveAnimationDuration)
         let delegateCall = SKAction.run { self.circleDelegate.circleFinishedMoving() }
@@ -66,7 +76,7 @@ class Circle: SKSpriteNode {
         self.run(sequence)
     }
     
-    func animateCircleBack(to xPosition: CGFloat) {
+    func animateBack(to xPosition: CGFloat) {
         let moveAction = SKAction.moveTo(x: xPosition, duration: CircleService.shared.moveBackAnimationDuration)
         let resizeAction = SKAction.scale(to: CircleService.shared.initialScale, duration: CircleService.shared.moveBackAnimationDuration)
         let delegateCall = SKAction.run { self.circleDelegate.circleFinishedMovingBack() }
@@ -76,10 +86,6 @@ class Circle: SKSpriteNode {
     }
 }
 
-protocol CircleDelegate {
-    func circleFinishedMoving()
-    func circleFinishedMovingBack()
-}
 
 
 

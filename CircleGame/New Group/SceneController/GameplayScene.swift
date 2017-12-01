@@ -13,17 +13,20 @@ class GameplayScene: SKScene {
     
     var scoreLabel: SKLabelNode?
     
-    var circleCanScale = true
+    var circleCanBeginScaleing = true
     var circleIsMoving = false
+    var canMoveToMainMenu = false
     
     override func didMove(to view: SKView) {
         initialize()
+        initializeDelegateNotifications()
         physicsWorld.contactDelegate = self
     }
     
     func initialize() {
         scoreLabel = self.childNode(withName: "ScoreLabel") as? SKLabelNode
-        ObstacleService.shared.resetDistance()
+        ObstacleService.shared.resetDistanceBetween()
+        
         createObstacle()
         createCircle()
         createBackground()
@@ -44,7 +47,8 @@ class GameplayScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if circleCanScale {
+        if canMoveToMainMenu { presentMainMenu() }
+        if circleCanBeginScaleing {
             circle.scale()
         }else if circleIsMoving {
             circle.scale()
@@ -52,7 +56,7 @@ class GameplayScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if circleCanScale {
+        if circleCanBeginScaleing {
             if circleIsBigEnought() {
                 moveCircle()
                 
@@ -70,8 +74,6 @@ class GameplayScene: SKScene {
     
     func circleScaleFailed() {
         circle.stopScale()
-//        circleCanScale = false
-//        DispatchQueue.main.asyncAfter(deadline: .now() + CircleService.shared.scaleFailedDuration, execute: { self.circleCanScale = true })
         circle.scaleBack()
     }
     
@@ -86,7 +88,7 @@ class GameplayScene: SKScene {
         let difference = ObstacleService.shared.distanceBetween - (0.1 * ObstacleService.shared.distanceBetween) - circle.size.height
         if difference > 0 {
             ObstacleService.shared.distanceBetween -= difference
-        } else {
+        } else if ObstacleService.shared.distanceBetween < 100 {
             ObstacleService.shared.distanceBetween -= 1
         }
     }
@@ -152,9 +154,9 @@ extension GameplayScene {
 extension GameplayScene {
     func moveCircle() {
         circle.stopScale()
-        circle.animateCircle(to: CircleService.shared.endingPoint)
+        circle.animate(to: CircleService.shared.endingPoint)
         
-        circleCanScale = false
+        circleCanBeginScaleing = false
         circleIsMoving = true
     }
     
@@ -190,6 +192,29 @@ extension GameplayScene {
 }
 
 
+// MARK: End Game Situation
+extension GameplayScene {
+    func endGameSituation() {
+        self.isPaused = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { self.canMoveToMainMenu = true })
+        
+        if let scoreText = scoreLabel?.text,
+            let score = Int(scoreText){
+            if GameService.shared.getHighscore() < score {
+                GameService.shared.set(highscore: score)
+            }
+            createEndGamePannel(withScore: score)
+        } else {
+            createEndGamePannel(withScore: 0)
+        }
+    }
+    
+    func createEndGamePannel(withScore score: Int) {
+        let endGamePannel = EndGamePannel()
+        endGamePannel.initialize(withScore: score)
+        self.addChild(endGamePannel)
+    }
+}
 
 // MARK: phisics contact delegate extension
 extension GameplayScene: SKPhysicsContactDelegate {
@@ -204,10 +229,9 @@ extension GameplayScene: SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secoundBody = contact.bodyA
         }
-
+        
         if firstBody.node?.name == "Circle" && secoundBody.node?.name == "ObstaclePartUp" {
-            self.removeAllChildren()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { self.presentMainMenu() })
+            endGameSituation()
         }
     }
 }
@@ -223,19 +247,34 @@ extension GameplayScene: CircleDelegate {
         createNextObstacle()
         
         circle.stopScale()
-        circle.animateCircleBack(to: CircleService.shared.startingPoint)
+        circle.animateBack(to: CircleService.shared.startingPoint)
         moveObstacles()
         moveGround()
     }
     
     func circleFinishedMovingBack() {
-        circleCanScale = true
+        circleCanBeginScaleing = true
     }
-    
-
 }
 
 
+// MARK: extension for delegate notifications (app state)
+extension GameplayScene {
+    func initializeDelegateNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(GameplayScene.appDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(GameplayScene.appWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+    }
+    
+    @objc
+    func appDidBecomeActive() {
+        circle.stopScale()
+    }
+    
+    @objc
+    func appWillResignActive() {
+        
+    }
+}
 
 
 

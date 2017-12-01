@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2969DE8C1FD19BAE00FE1BF6 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969DE8B1FD19BAE00FE1BF6 /* GameService.swift */; };
+		2969DE8E1FD19CCD00FE1BF6 /* EndGamePannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2969DE8D1FD19CCD00FE1BF6 /* EndGamePannel.swift */; };
 		29C9DC101FCD97D200556DED /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9DC0F1FCD97D200556DED /* Background.swift */; };
 		29C9DC121FCD97E300556DED /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9DC111FCD97E300556DED /* Ground.swift */; };
 		29C9DC141FCDCE1700556DED /* CircleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C9DC131FCDCE1700556DED /* CircleService.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2969DE8B1FD19BAE00FE1BF6 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		2969DE8D1FD19CCD00FE1BF6 /* EndGamePannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGamePannel.swift; sourceTree = "<group>"; };
 		29C9DC0F1FCD97D200556DED /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		29C9DC111FCD97E300556DED /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		29C9DC131FCDCE1700556DED /* CircleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleService.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				29D8D97E1FCC63B50003198D /* IphoneTypeService.swift */,
 				29C9DC131FCDCE1700556DED /* CircleService.swift */,
 				29C9DC151FCDD4D100556DED /* ObstacleService.swift */,
+				2969DE8B1FD19BAE00FE1BF6 /* GameService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				29D8D9651FCC624A0003198D /* Assets.xcassets */,
 				29D8D9621FCC624A0003198D /* Main.storyboard */,
 				29D8D9671FCC624A0003198D /* LaunchScreen.storyboard */,
+				2969DE8D1FD19CCD00FE1BF6 /* EndGamePannel.swift */,
 			);
 			name = View;
 			path = "New Group1";
@@ -229,7 +235,9 @@
 				29D8D9851FCCAA8F0003198D /* Obstacle.swift in Sources */,
 				29D8D9791FCC630D0003198D /* GameplayScene.swift in Sources */,
 				29D8D9611FCC624A0003198D /* GameViewController.swift in Sources */,
+				2969DE8C1FD19BAE00FE1BF6 /* GameService.swift in Sources */,
 				29C9DC101FCD97D200556DED /* Background.swift in Sources */,
+				2969DE8E1FD19CCD00FE1BF6 /* EndGamePannel.swift in Sources */,
 				29D8D9771FCC62FE0003198D /* MainMenuScene.swift in Sources */,
 				29D8D9591FCC624A0003198D /* AppDelegate.swift in Sources */,
 				29C9DC121FCD97E300556DED /* Ground.swift in Sources */,
