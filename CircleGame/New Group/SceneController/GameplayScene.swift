@@ -86,11 +86,9 @@ class GameplayScene: SKScene {
     
     func adjustObstacleDistance() {
         let difference = ObstacleService.shared.distanceBetween - (0.1 * ObstacleService.shared.distanceBetween) - circle.size.height
-        if difference > 0 {
-            ObstacleService.shared.distanceBetween -= difference
-        } else if ObstacleService.shared.distanceBetween < 100 {
-            ObstacleService.shared.distanceBetween -= 1
-        }
+        if difference > 0 { ObstacleService.shared.distanceBetween -= difference }
+        else { createGreatLabel() }
+        if ObstacleService.shared.distanceBetween < 80 { ObstacleService.shared.distanceBetween -= 2 }
     }
 }
 
@@ -103,6 +101,20 @@ extension GameplayScene {
         circle.setPosition(CGPoint(x: CircleService.shared.startingPoint, y: 0))
         circle.circleDelegate = self
         self.addChild(circle)
+    }
+    
+    func createPerfectLabel() {
+        let perfectLabel = PerfectLabel()
+        perfectLabel.initialize()
+        perfectLabel.animate()
+        self.addChild(perfectLabel)
+    }
+
+    func createGreatLabel() {
+        let greatLabel = GreatLabel()
+        greatLabel.initialize()
+        greatLabel.animate()
+        self.addChild(greatLabel)
     }
     
     func createBackground() {
@@ -195,6 +207,7 @@ extension GameplayScene {
 // MARK: End Game Situation
 extension GameplayScene {
     func endGameSituation() {
+        scoreLabel?.removeFromParent()
         self.isPaused = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: { self.canMoveToMainMenu = true })
         
@@ -232,6 +245,12 @@ extension GameplayScene: SKPhysicsContactDelegate {
         
         if firstBody.node?.name == "Circle" && secoundBody.node?.name == "ObstaclePartUp" {
             endGameSituation()
+        }
+        
+        if firstBody.node?.name == "Circle" && secoundBody.node?.name == "ObstaclePerfect" {
+            secoundBody.node?.removeFromParent()
+            increaseScore()
+            createPerfectLabel()
         }
     }
 }

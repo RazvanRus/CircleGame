@@ -17,6 +17,6 @@ class Background: SKSpriteNode {
         self.name = "Background"
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.position = CGPoint(x: CGFloat(position) * self.size.width, y: 0)
-        self.zPosition = 0
+        self.zPosition = ZPositionService.shared.background
     }
 }

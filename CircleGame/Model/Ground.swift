@@ -17,7 +17,7 @@ class Ground: SKSpriteNode {
         self.name = "Ground"
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.position = CGPoint(x: CGFloat(position) * self.size.width, y: -(height / 2) - 50)
-        self.zPosition = 10
+        self.zPosition = ZPositionService.shared.ground
         
         self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
         self.physicsBody?.affectedByGravity = false

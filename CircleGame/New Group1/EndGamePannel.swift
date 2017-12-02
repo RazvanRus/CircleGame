@@ -22,9 +22,9 @@ class EndGamePannel: SKSpriteNode {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.position = CGPoint(x: 0, y: 0)
         self.size = CGSize(width: 1334, height: 750)
-        self.zPosition = 20
+        self.zPosition = ZPositionService.shared.endGame
         self.color = SKColor.black
-        self.alpha = 0.8
+        self.alpha = 0.9
     }
     
     func createTextLabel() {

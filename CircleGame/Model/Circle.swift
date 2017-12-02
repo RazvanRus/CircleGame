@@ -13,7 +13,7 @@ struct ColliderType {
     static let Circle: UInt32 = 1
     static let Obstacle: UInt32 = 2
     static let Ground: UInt32 = 3
-    static let Score: UInt32 = 4
+    static let Perfect: UInt32 = 4
 }
 
 
@@ -34,17 +34,17 @@ class Circle: SKSpriteNode {
 
     func createCircle() {
         self.name = "Circle"
-        self.texture = SKTexture(imageNamed: "circle")
+        self.texture = SKTexture(imageNamed: "Circle")
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.size = CGSize(width: CircleService.shared.initialSize, height: CircleService.shared.initialSize)
-        self.zPosition = 3
+        self.zPosition = ZPositionService.shared.circle
         
         self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.height/2)
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.affectedByGravity = true
         self.physicsBody?.categoryBitMask = ColliderType.Circle
         self.physicsBody?.collisionBitMask = ColliderType.Obstacle
-        self.physicsBody?.contactTestBitMask = ColliderType.Obstacle | ColliderType.Score
+        self.physicsBody?.contactTestBitMask = ColliderType.Obstacle | ColliderType.Perfect
     }
     
     func setPosition(_ position: CGPoint) {

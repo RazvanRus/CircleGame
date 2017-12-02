@@ -10,7 +10,7 @@ import SpriteKit
 
 class Obstacle: SKNode {
     func initialize(withDistance distance: CGFloat) {
-        self.zPosition = 4
+        self.zPosition = ZPositionService.shared.obstacle
         self.name = "Obstacle"
         
         let partsHeight = ((750-distance)/2 + 1) * 2
@@ -25,7 +25,7 @@ class Obstacle: SKNode {
     }
     
     func createPartUp(withHeight height: CGFloat) {
-        let partUp = SKSpriteNode(imageNamed: "Pipe")
+        let partUp = SKSpriteNode(imageNamed: "Obstacle")
         let yPosition = (750-height)/2 + 1 + height/2
         
         partUp.name = "ObstaclePartUp"
@@ -44,7 +44,7 @@ class Obstacle: SKNode {
     }
     
     func createPartDown(withHeight height: CGFloat) {
-        let partDown = SKSpriteNode(imageNamed: "Pipe")
+        let partDown = SKSpriteNode(imageNamed: "Obstacle")
         let yPosition = (750-height)/2 + 1 + height/2
 
         partDown.name = "ObstaclePartDown"
@@ -65,13 +65,13 @@ class Obstacle: SKNode {
         let perfectPart = SKSpriteNode()
         let height = ObstacleService.shared.distanceBetween * 0.05
         
-        perfectPart.name = "ObstacleScore"
+        perfectPart.name = "ObstaclePerfect"
         perfectPart.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         perfectPart.position = CGPoint(x: 0, y: yPosition-(height/2))
         perfectPart.size = CGSize(width: 5, height: height)
         
         perfectPart.physicsBody = SKPhysicsBody(rectangleOf: perfectPart.size)
-        perfectPart.physicsBody?.categoryBitMask = ColliderType.Score
+        perfectPart.physicsBody?.categoryBitMask = ColliderType.Perfect
         perfectPart.physicsBody?.collisionBitMask = 0
         perfectPart.physicsBody?.affectedByGravity = false
         perfectPart.physicsBody?.isDynamic =  false
@@ -87,7 +87,6 @@ class Obstacle: SKNode {
         ramp.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         ramp.size = CGSize(width: height*2, height: height)
         ramp.position = CGPoint(x: -ramp.size.width/2 - 15, y: -yPosition)
-        ramp.zPosition = 3
         
         ramp.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ramp"),
                                          size: CGSize(width: ramp.size.width, height: ramp.size.height))

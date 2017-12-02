@@ -26,6 +26,9 @@
 		29D8D97F1FCC63B50003198D /* IphoneTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D97E1FCC63B50003198D /* IphoneTypeService.swift */; };
 		29D8D9831FCC686F0003198D /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9821FCC686F0003198D /* Circle.swift */; };
 		29D8D9851FCCAA8F0003198D /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D8D9841FCCAA8F0003198D /* Obstacle.swift */; };
+		29EB1BA61FD2CA1400330792 /* PerfectLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB1BA51FD2CA1400330792 /* PerfectLabel.swift */; };
+		29EB1BA81FD2CD6E00330792 /* GreatLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB1BA71FD2CD6E00330792 /* GreatLabel.swift */; };
+		29EB1BAA1FD2CE1400330792 /* ZPositionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EB1BA91FD2CE1400330792 /* ZPositionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		29D8D97E1FCC63B50003198D /* IphoneTypeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneTypeService.swift; sourceTree = "<group>"; };
 		29D8D9821FCC686F0003198D /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		29D8D9841FCCAA8F0003198D /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
+		29EB1BA51FD2CA1400330792 /* PerfectLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectLabel.swift; sourceTree = "<group>"; };
+		29EB1BA71FD2CD6E00330792 /* GreatLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatLabel.swift; sourceTree = "<group>"; };
+		29EB1BA91FD2CE1400330792 /* ZPositionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZPositionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 				29C9DC131FCDCE1700556DED /* CircleService.swift */,
 				29C9DC151FCDD4D100556DED /* ObstacleService.swift */,
 				2969DE8B1FD19BAE00FE1BF6 /* GameService.swift */,
+				29EB1BA91FD2CE1400330792 /* ZPositionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -130,6 +137,8 @@
 				29D8D9621FCC624A0003198D /* Main.storyboard */,
 				29D8D9671FCC624A0003198D /* LaunchScreen.storyboard */,
 				2969DE8D1FD19CCD00FE1BF6 /* EndGamePannel.swift */,
+				29EB1BA51FD2CA1400330792 /* PerfectLabel.swift */,
+				29EB1BA71FD2CD6E00330792 /* GreatLabel.swift */,
 			);
 			name = View;
 			path = "New Group1";
@@ -233,11 +242,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				29D8D9851FCCAA8F0003198D /* Obstacle.swift in Sources */,
+				29EB1BAA1FD2CE1400330792 /* ZPositionService.swift in Sources */,
 				29D8D9791FCC630D0003198D /* GameplayScene.swift in Sources */,
 				29D8D9611FCC624A0003198D /* GameViewController.swift in Sources */,
 				2969DE8C1FD19BAE00FE1BF6 /* GameService.swift in Sources */,
 				29C9DC101FCD97D200556DED /* Background.swift in Sources */,
 				2969DE8E1FD19CCD00FE1BF6 /* EndGamePannel.swift in Sources */,
+				29EB1BA61FD2CA1400330792 /* PerfectLabel.swift in Sources */,
+				29EB1BA81FD2CD6E00330792 /* GreatLabel.swift in Sources */,
 				29D8D9771FCC62FE0003198D /* MainMenuScene.swift in Sources */,
 				29D8D9591FCC624A0003198D /* AppDelegate.swift in Sources */,
 				29C9DC121FCD97E300556DED /* Ground.swift in Sources */,
