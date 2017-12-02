@@ -25,6 +25,7 @@ class GameplayScene: SKScene {
     
     func initialize() {
         scoreLabel = self.childNode(withName: "ScoreLabel") as? SKLabelNode
+        scoreLabel?.zPosition = ZPositionService.shared.score
         ObstacleService.shared.resetDistanceBetween()
         
         createObstacle()
@@ -82,6 +83,11 @@ class GameplayScene: SKScene {
             let score = Int(scoreText) {
             scoreLabel?.text = "\(score+1)"
         }
+    }
+    
+    func increaseBonusPoints() {
+        let bonusPoints = GameService.shared.getBonusPoints()
+        GameService.shared.set(bonusPoints: bonusPoints+1)
     }
     
     func adjustObstacleDistance() {
@@ -250,6 +256,7 @@ extension GameplayScene: SKPhysicsContactDelegate {
         if firstBody.node?.name == "Circle" && secoundBody.node?.name == "ObstaclePerfect" {
             secoundBody.node?.removeFromParent()
             increaseScore()
+            increaseBonusPoints()
             createPerfectLabel()
         }
     }

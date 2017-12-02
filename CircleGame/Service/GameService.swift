@@ -20,4 +20,13 @@ class GameService {
     func getHighscore() -> Int {
         return UserDefaults.standard.integer(forKey: "RusRazvan.CircleGame.highscore")
     }
+    
+    func set(bonusPoints points: Int) {
+        UserDefaults.standard.set(points, forKey: "RusRazvan.CircleGame.bonuspoints")
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getBonusPoints() -> Int {
+        return UserDefaults.standard.integer(forKey: "RusRazvan.CircleGame.bonuspoints")
+    }
 }
